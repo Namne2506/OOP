@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOP4
+{
+    public class TextBook : Book
+    {
+        public bool UsedBook { get; set; }
+        public TextBook(int id, int bookID, string title, string author, int publishedYear, int salePrice, bool usedbook)
+            : base(id, bookID, title, author, publishedYear, salePrice)
+        {
+            UsedBook = usedbook;
+        }
+
+        public decimal PriceWithDiscount()
+        {
+            if (UsedBook)
+            {
+                return SalePrice * 0.8m;
+            }
+            return SalePrice;
+        }
+    
+    }
+}
+
