@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOP4
+{
+    public class ReferenceBook : Book
+    {
+        public ReferenceBook(int id, int bookId, string author, string title, int publishYear, int salePrice)
+            : base(id, bookId, author, title, publishYear, salePrice)
+        {
+
+        }
+        
+        
+        public decimal PriceWithTax()
+        {
+            return SalePrice * 1.10m;
+        }
+    }
+}
