@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Reflection.Metadata.BlobBuilder;
+
+namespace OOP4
+{
+    internal class BookManager : IAction
+    {
+        private List<Book> books = new List<Book>();
+        public bool Add(Book book)
+        {
+            books.Add(book);
+            return true;
+        }
+
+        public bool Delete(int Id)
+        {
+            var bookFind = books.FirstOrDefault(x => x.Id == Id);
+            books.Remove(bookFind);
+            return true;
+        }
+
+        public bool Edit(int Id, int BookId, string Author, string Title, int pulishYear, int SalePrice)
+        {
+            var bookFind = books.FirstOrDefault(x => x.Id == Id);
+            bookFind.Author = Author;
+            bookFind.Title = Title;
+            bookFind.BookID = BookId;
+            bookFind.SalePrice = SalePrice;
+            bookFind.PublishedYear = pulishYear;
+            return true;
+        }
+
+        public List<Book> GetBooks()
+        {
+            return books.ToList();
+        }
+    }
+}
