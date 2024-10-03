@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOP4
+{
+    public class Book
+    {
+        public int Id { get; set; }
+        public int BookID { get; set; }
+
+        public string Title { get; set; }
+
+        public string Author { get; set; }
+
+        public int PublishedYear { get; set; }
+        public int SalePrice { get; set; }
+
+        public Book(int id, int bookID, string title, string author, int publishedYear, int salePrice)
+        {
+            Id = id;
+            BookID = bookID;
+            Title = title;
+            Author = author;
+            PublishedYear = publishedYear;
+            SalePrice = salePrice;
+        }
+    }
+}
